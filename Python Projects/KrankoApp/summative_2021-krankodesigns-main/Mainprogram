@@ -1,0 +1,257 @@
+
+Main Program:
+
+##Import the classes as they will be saved in different files
+from --- import KrankoDesigns
+from --- import  Developers
+from --- import Accountants
+from --- import Architects
+from --- import Designers
+https://code-with-me.jetbrains.com/dI_yxLD81qy_0VQorqhXiA#p=PC&fp=F1B7116CFDFE416EC3DDF9C7006048F2C500C6E65BD9128DD2AF58F4468171AF
+Import datetime
+Import Tkinter
+
+#have a dictionary that stores the software being sold
+software = {}
+#Function to process the purchase of software
+
+
+##Creating an account:
+#Starts by initialising our data storage
+#Will divide account creation into that for professionals and for clients
+
+#Initialise a dictionary and list for customers
+cust_dict = {}
+cust_IDs = [] #store the customers’ unique codes
+#Initialize a dictionary for Developers
+dev_dict ={}
+dev_IDs=[]
+#Initialize a dictionary/list for Accountants
+accountants_dict = {}
+accountants_IDs = []
+#Initialize a dictionary/list for Architects
+arch_dict = {}
+arch_IDs = []
+#Initialize a dictionary/list for Designers
+des_dict = {}
+des_IDs = []
+#Initialize a dictionary/list for all professionals
+Professionals_dict[unique code]=professionals
+
+
+def create_account():
+ Response = int(input( “What type of account do you want?
+Customer Account
+Developer Account
+Accountant Account
+Architect Account
+Designer Account
+Enter the corresponding number:”))
+	If response == 1:
+		fName = input(“Please enter your first name: ”)
+		lName = input(“Please enter your last name: “)
+		password = int(“please set your password. Only numbers of any length: ”)
+		birthday= input("What is your date of birth? (in DD/MM/YYYY) ")
+		dob = datetime.datetime.strptime(birthday,"%d/%m/%Y")
+		phone_no = input(“Enter your phone number”)
+		doj = datetime.date.today()
+		acc  = int(input(“How much would you like to deposit initially?”)
+		user = KrankoDesigns(fName,lName,password,dob,phone_no,doj,acc)
+		cust_IDs.append(user.unique_ID) #To append unique_ID to the list
+		cust_dict[user.unique_ID] = user #Adding the customer to the dictionary of customers
+		print(“Account created successfully!)
+		print(“This is your unique_ID that you will be using to log in{user.unique_ID}”)
+		Take to main menu
+
+	elif response == 2:
+		fName = input(“Please enter your first name: ”)
+		lName = input(“Please enter your last name: “)
+		password = int(“please set your password. Only numbers of any length: ”)
+		birthday= input("What is your date of birth? (in DD/MM/YYYY) ")
+		dob = datetime.datetime.strptime(birthday,"%d/%m/%Y")
+		phone_no = input(“Enter your phone number”)
+		doj = datetime.date.today()
+		acc  = int(input(“How much would you like to deposit initially?”)
+		specialty = input(“What is your specialty eg front end, fullstack, software eng: “)
+		years_of_experience = input(“how many years of experience do you have? “)
+		rate = int(input(“On average, how much do you charge per project?”))
+		available = input(“Are you available to start immediately? Yes or No”)
+		dev = Developers(fName,lName,password,dob,phone_no,doj,acc,specialty,years_of_experience,rate,available)
+		dev_IDs.append(dev.unique_ID)
+		dev_dict[ dev.unique_ID] = dev
+		print(“Account created successfully!)
+		print(“This is your unique_ID that you will be using to log in{dev.unique_ID}”)
+		Take to main menu
+
+	elif response ==3:
+		fName = input(“Please enter your first name: ”)
+		lName = input(“Please enter your last name: “)
+		password = int(“please set your password. Only numbers of any length: ”)
+		birthday= input("What is your date of birth? (in DD/MM/YYYY) ")
+		dob = datetime.datetime.strptime(birthday,"%d/%m/%Y")
+		phone_no = input(“Enter your phone number”)
+		doj = datetime.date.today()
+		acc  = int(input(“How much would you like to deposit initially?”)
+		specialty = input(“What is your specialty eg front end, fullstack, software eng: “)
+		years_of_experience = input(“how many years of experience do you have? “)
+		rate = int(input(“On average, how much do you charge per project?”))
+		available = input(“Are you available to start immediately? Yes or No”)
+		licence_no = int(input(“Enter your license number here”)
+		accountant =  Accountants(fName,lName,password,dob,phone_no,doj,acc,specialty,years_of_experience,rate,available,licence_no )
+		accountants_IDs .append(accountant.unique_ID)
+		accountants_dict[ accountant.unique_ID] = accountant
+		print(“Account created successfully!)
+		print(“This is your unique_ID that you will be using to log in{accountant.unique_ID}”)
+		Take to main menu
+
+	elif response == 4:
+		fName = input(“Please enter your first name: ”)
+		lName = input(“Please enter your last name: “)
+		password = int(“please set your password. Only numbers of any length: ”)
+		birthday= input("What is your date of birth? (in DD/MM/YYYY) ")
+		dob = datetime.datetime.strptime(birthday,"%d/%m/%Y")
+		phone_no = input(“Enter your phone number”)
+		doj = datetime.date.today()
+		acc  = int(input(“How much would you like to deposit initially?”)
+		specialty = input(“What is your specialty eg front end, fullstack, software eng: “)
+		years_of_experience = input(“how many years of experience do you have? “)
+		rate = int(input(“On average, how much do you charge per project?”))
+		available = input(“Are you available to start immediately? Yes or No”)
+		govt_reg_no = int(input(“Enter your government registration number: “)
+		architect = Architects(fName,lName,password,dob,phone_no,doj,acc,specialty,years_of_experience,rate,available,govt_reg_no)
+		arch_IDs.append(architect.unique_ID)
+		arch_dictt[architect.unique_ID] = architect
+		print(“Account created successfully!)
+		print(“This is your unique_ID that you will be using to log in{architect.unique_ID}”)
+		Take to main menu
+
+	elif response == 5:
+		fName = input(“Please enter your first name: ”)
+		lName = input(“Please enter your last name: “)
+		password = int(“please set your password. Only numbers of any length: ”)
+		birthday= input("What is your date of birth? (in DD/MM/YYYY) ")
+		dob = datetime.datetime.strptime(birthday,"%d/%m/%Y")
+		phone_no = input(“Enter your phone number”)
+		doj = datetime.date.today()
+		acc  = int(input(“How much would you like to deposit initially?”)
+		specialty = input(“What is your specialty eg front end, fullstack, software eng: “)
+		years_of_experience = input(“how many years of experience do you have? “)
+		rate = int(input(“On average, how much do you charge per project?”))
+		available = input(“Are you available to start immediately? Yes or No”)
+		des = Designers(fName,lName,password,dob,phone_no,doj,acc,specialty,years_of_experience,rate,available)
+		des IDs.append(des.unique_ID)
+		des dict[ des.unique_ID] = des
+		print(“Account created successfully!)
+		print(“This is your unique_ID that you will be using to log in{des.unique_ID}”)
+		Take to main menu
+
+
+
+##This function describes how users will be login in. For professionals and for clients
+def log_in():
+	unique_ID = int(input(“Enter your unique ID: ”))
+	password = int(input(“Enter your password: ”))
+
+	if unique_ID in cust_dict and cust_dict[unique_ID].password == password#Checking if the unique ID is in customers
+		client_menu()
+
+#This function will be called whenever a client wants to go back to the menu or when it is necessary that a client goes back to the main menu
+def client_menu():
+	ans = int(input(“Welcome to KrankoDesigns. What would you like to do?
+        Hire a developer
+        Hire an accountant
+        Hire an architect
+        Hire a designer
+        Buy software
+        Calculate tax
+		Enter the corresponding number of desired action: “))
+
+	if ans == 1:
+		cust_dict[unique_ID]. hiring_developer()
+	elif ans == 2:
+		 cust_dict[unique_ID]. hiring_accountant()
+	elif ans == 3:
+		cust_dict[unique_ID]. hiring_architect()
+	elif ans ==4:
+		cust_dict[unique_ID]. hiring_designer()
+	elif ans == 5:
+		cust_dict[unique_ID]. buying_software()
+	elif ans == 6:
+		cust_dict[unique_ID]. calc_tax()
+  	 if unique_ID in professional_dict and  professionls_dict[unique_ID].password == password#Checking if the unique ID is in professionals
+
+
+#This function defines the menu that professionals on the platform will see
+def prof_menu():
+    ans = int(input(“Welcome to KrankoDesigns. What would you like to do?
+        1.Hire a developer
+        2.Hire an accountant
+        3.Hire an architect
+        4.Hire a designer
+        5.Buy software
+        6.Calculate tax
+        7. Take a loan
+        8. Take a leave from the app
+        9. Resume from a leave
+        10. Terminate contract with app
+
+		Enter the corresponding number of desired action: “))
+        While True
+
+            if ans == 1:
+                prof_dict[unique_ID]. hiring_developer()
+            elif ans == 2:
+                prof_dict[unique_ID]. hiring_accountant()
+            elif ans == 3:
+                prof_dict[unique_ID]. hiring_architect()
+            elif ans ==4:
+                prof_dict[unique_ID]. hiring_designer()
+            elif ans == 5:
+                prof_dict[unique_ID]. buying_software()
+            elif ans == 6:
+                prof_dict[unique_ID]. calc_tax()
+            elif ans == 7:
+                prof_dict[unique_ID]. take_a_loan()
+            elif ans ==8:
+                prof_dict[unique_ID]. take_a_leave from app()
+            elif ans == 9:
+                prof_dict[unique_ID]. resume_from_leave()
+            elif ans == 10:
+                prof_dict[unique_ID]. Terminate contract with app()
+            Else:
+            Invalid entry
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

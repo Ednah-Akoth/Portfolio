@@ -1,0 +1,66 @@
+##Child class (Inherits from Developers’ class)
+# This class inherits from Developers, which also inherits from the parent class KrankoDesigns. It will therefore have access to the methods from KrankoDesigns and Developers. There is a take a loan method defined here that overides those from the classes it is inheriting.
+class Accountants(Developers):
+Initialize the unique ID that will be assigned to an accountant  as Unique ID
+code = 700
+	##Create the object variables
+	def __init__(self, fName,lName,password,dob,phone_no,doj,acc,specialty,years_of_experience,rate,available,portfolio_link,licence_no):
+super().__init(fName,lName,password,dob,phone_no,doj,acc,specialty,years_of_experience,rate,available)
+			self.unique_ID =Accountant.code
+        			Accountant.code = Accountant.code+1
+			self.licence=licence
+
+	def take_a_loan(self):
+		If doj - today <90 days:
+			Reject loan request.
+			print(“You can only borrow after being a member of KrankoDesigns for 3months”
+			Take them to main menu
+		elif  doj - today >= 90 days:
+			Ask user to enter amt
+			Exception handling of value error
+			##Accountants can only borrow a maximum of $6000
+			If amount > 6000
+				print(“Request is out of range. Can only borrow $6000”)
+				Back to main menu
+			Elif amount > amount in KrankoDesigns account:
+				print(amount not available. Try the process again with a lower amount)
+				Back to main menu
+			else:
+Add said amount to self.acc
+deduct amount from KrankoDesigns account:
+print(operation successful. You have borrowed {amt}’)
+Take user to main menu
+
+Test scenarios for this class
+
+Import unittest
+Import accountant's class if in another file.
+-->def Test_hiring_accountant
+This would test whether the hiring_accountant method is working correctly
+This would be implemented by creating sample objects and test using them.
+ Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the accountant’s account. We could also check whether the filter of only displaying accountants with a ‘yes’ availability works correctly. The 80% - 20% split will also have to be tested to see if the correct amount are being added to the respective accounts.
+
+→ def Test_hiring_architect
+This would test whether the hiring_architect method is working correctly
+This would be implemented by creating sample objects and test using them.
+Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the architect’s account. We could also check whether the filter of only displaying architects with a ‘yes’ availability works correctly. The 80% - 20% split will also have to be tested to see if the correct amount are being added to the respective accounts.
+-->def Test_buying_software
+This would test whether the buying_software method is working correctly
+This would be implemented by creating sample objects and test using them.
+Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the company’s account. We could also check whether a customer can purchase when there is no stock, and if they can purchase when they don’t have enough funds
+
+-->def Test_calc_tax
+This would test whether the calc_tax method is working correctly
+This would be implemented by creating sample objects and test using them.
+Some of the scenarios to be tested include calculating both corporate and individual tax and trying a variety of income values in each range.
+
+
+-->Def  Test_take a loan()
+This would test the take_a loan method, by first creating a sample object then checking if Krankodesigns has any money to lend, and if yes,then check if the amount borrowed is less than what Krankodesigns has and if the conditions are met,the developer is granted a loan.This involves checking whether borrowing beyond the limit will be allowed., if the money will be credited to the user’s account and debited from KrankoDesigns account
+
+
+→ Def Test_take_ a leave
+This would test the take_a_leave method, by temporarily scraping off the accountant's name off the operating dictionary until the developer comes back. A sample object would be used to test it.
+
+-->Def Test_terminate_contract
+This would test the terminate contract method, by permanently scraping off the accountants name in the operating dictionary. A sample object would be used to test this.

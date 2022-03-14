@@ -1,0 +1,734 @@
+/*Import the fonts*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@200;600&family=Lobster&family=Neonderthaw&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+*{
+    /* this serves to remove all the unnecessary space */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/*padding and border are included in the width and height:*/
+
+}
+
+html{
+    font-size: 10px;
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+}
+
+
+/* modifiying our anchor tag to remove the underline as it looks weird on the button*/ 
+a{
+    text-decoration: none;
+}
+/*Common style for img*/
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+
+.container{
+    /*generic container definition*/
+    min-height:100vh; /*defines the minimum height of an element.*/
+    width: 100%;
+    display: flex;
+    align-items: center; /*Center the alignments for all the items of the flexible <div> element including text*/
+    justify-content: center;
+    
+
+}
+/* The Header section */
+#my_header{
+    position: fixed; /*Will stay at the top*/    
+    width:100vw ; 
+    z-index: 1000;
+    left: 0;
+    height: auto;
+    top: 0;
+    
+}
+.my_header{
+  min-height: 10vh;
+    background-color: rgb(0, 0, 0); 
+    opacity: .6;
+  
+
+  
+}
+.navigation{
+    
+   display: flex;
+   align-items: center;
+   justify-content: space-between; /*push them as far apart as possible*/
+   width: 100%;
+   height: 100%;
+   max-width: 1300px;
+   /* min-width: 500px; */
+   padding: 0 10px;
+}
+
+
+.brand h2{
+    color: white;
+    font-family: 'Redressed', cursive;
+    font-size: 5rem;
+    
+
+}
+.brand h2 span{
+    color: rgba(253,105,163,255);
+    font-size: 5rem;
+}
+ .navigation_list ul{
+
+    position: initial;    
+	display: flex;
+	height: auto;
+	width: fit-content;
+	background-color: transparent;
+    overflow: hidden;
+    
+
+} 
+
+.navigation_list ul li{
+    display: inline-block;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+
+.navigation_list ul li a{
+    font-size: 1.8rem;
+    color: white;
+    transition: .3s ease-out;
+}
+.navigation_list ul li a:hover{
+   color: rgba(253,105,163,255);
+   
+}
+.toggle_button{
+    position: absolute;
+    top: 2rem; /*some space between the bars and the top*/   
+    right: 4rem;
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between;
+    width: 31px ;
+    height: 21px;
+
+}
+.toggle_button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+@media (max-width:900px){
+    .toggle_button{
+        display: flex;
+    }
+    .navigation_list{
+        /* have the navigation links disappear when min width attained*/
+        display: none;
+        width: 100%;
+    }
+    .navigation{/*making the hamburger list horizontal*/
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navigation_list ul{
+        width: 100%;
+        flex-direction: column;/*get them displayed downwards*/
+    }
+    .navigation_list li{ /*aligning the menu at the center*/
+        text-align:center;
+    }
+    .navigation_list li a{
+        padding: .5rem;/*spacing between the links*/
+    }
+    .navigation_list.active{
+        display: flex;/*change from block to flex to enable  the repositioning of te navigation bar*/
+    }
+
+
+}
+ 
+
+
+
+
+/* End of my header section */
+/*Hero Section Styles*/
+#hero{
+     /* Using linear-gradient to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/hero13.jpg);
+
+    height: 100%;
+    width: 100%;
+
+     /* To position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;    
+}
+
+#hero h1{/*h1 in the hero*/
+    display: block;
+    width: fit-content;
+    font-size: 4rem; /*Since all html set to 10px, to set the h1 to 40px, where 1rem equals the font size of the html element*/
+    color: transparent;
+    position: relative;
+    animation: for_revealing_text 1s ease forwards;/*maintain the text keyframe after animation finishes*/
+    animation-delay:1.5s ;/*delays text*/
+}
+
+
+/*Center aligns the items in the hero container*/
+
+.hero{
+padding: 0 0  0 100px;/*80px padding on the left*/
+/* margin: 0 auto; */
+justify-content: left;
+}
+
+
+
+/* this is to animate h1s in the hero */
+#hero h1 span{
+    position: absolute;
+    /* repositioning the span box */
+     top: 0; /*make the color flow on top of the words */
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgba(253,105,163,255);
+    animation:for_revealing_text-box 1s ease;
+    animation-delay: 1s;
+}
+
+
+/*formatting the porfolio button*/
+.call-to-action{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 900;
+    color: rgba(253,105,163,255);
+    background-color: transparent;
+    border: 2px solid rgba(253,105,163,255);
+    font-size: 2rem;
+    text-transform: uppercase; /* to make it uppercase*/
+    letter-spacing: 1rem;
+    margin-top: 30px; /*space between text and button*/
+
+    /*animates background change*/
+    transition: .3s ease-out;
+    transition-property: background-color, color;/*applying the transition to both background and text*/ 
+}
+
+
+/*setting some hover effect for the call to action button*/
+.call-to-action:hover{
+    color: white;
+    background-color: rgba(253,105,163,255);
+}
+
+
+/* keyframes for animation */
+@keyframes for_revealing_text-box{
+
+    50%{
+        /*Since position property is absolute, the left property specifies the distance between the element left edge and the left edge of its containing block. 0 means it has covered the whole block */
+        width: 100%;
+        left: 0;
+
+    }
+    100%{
+       left:100%;
+       width:0; 
+    }
+}
+
+@keyframes for_revealing_text{
+    100%{
+        /*in the end, the color should be white. So initial stage is set to not visible i.e transparent*/
+        color: white;
+    }
+    
+}
+/* End of Hero Section */
+
+
+
+/* what I do section */
+#what-I-do{
+    margin-bottom: 0px;
+}
+.what-I-do{
+    display: flex;
+    flex-direction: column;  /*make the items be in column*/
+    text-align: center;
+    max-width: 1500px;
+    
+    padding: 100px 0;/*some space top and bottom to separate each pictoral*/
+}
+
+/*Styling of section titles*/
+.section-title{
+    /*this is the section title of the what-I-do section with id #what-I-do*/
+    font-size: 4rem;  
+    font-weight: 400;  
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .6rem;
+    text-align: center;
+
+}
+ .section-title span{
+color:rgba(253,105,163,255);
+}
+
+/*Styling paragraphs*/
+ p{
+    font-size: 1.5rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 200px;
+
+}
+/*Styling h1*/
+
+
+/*Styling h2*/
+h2{
+    font-size:2.5rem;
+    color: black;
+    font-weight: 500;
+}
+
+
+/* styling the class with pictoral */
+
+.what-I-do .what-I-do-pictorals{
+    display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+    margin-top:50px;
+    
+    
+}
+
+/* styling each of the pictorals */
+.what-I-do-item{
+    flex-basis: 80%;/*makes the width of the items to be 80% of container*/
+    justify-content: center;
+    max-width: 1200px;
+    align-items: center ;
+    padding:35px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75)), url(./img/icon-background.webp);    
+    background-size: cover;
+    margin: 10px 5%;
+    
+
+}
+
+
+/*Editing the icons in each card*/
+.pictoral img{
+    height: 80 px ;
+    width: 80px;
+    margin-bottom:20px;
+    
+    
+}
+/*Formatting the text in the card*/
+.what-I-do-item h2{
+    font-size:2.5rem;
+    color: white;
+    font-weight: 600;
+}
+
+h2 span{
+    color: rgba(253,105,163,255);
+    
+}
+
+.what-I-do-item p{
+    color: white;
+    line-height: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    
+}
+
+
+/* End of what I do section */
+
+
+/* Start of projects section  */
+.project_title{
+   font-size: 3rem;
+   font-weight: 700;
+    
+}
+.projects{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:100px 0;
+
+}
+.project_section_header h1{
+    
+    margin-bottom: 50px;
+}
+.project_items{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.project_item{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    width: 80%;
+    margin:20px auto;    
+    border-radius: 30px;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
+    box-shadow: 0 10px 20px rgba(218,218,218,255);
+    transition: .4s ease box-shadow;
+}
+.project_item:hover{
+    box-shadow: 0 10px 20px rgba(253,105,163,255);
+}
+
+
+.project_write_up{
+    padding: 30px;
+	flex-basis: 50%;
+	height: 100%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;	
+	color: white;
+    
+    
+}
+.project_write_up p a{
+    color: black;
+    font-size:2.5rem;
+    transition: .3s ease-out;
+
+}
+.project_write_up p a:hover{
+    color: rgba(253,105,163,255);
+
+}
+.project_image {
+    flex-basis: 50%;
+	height: 300px;
+	overflow: hidden;
+	position: relative;   
+}
+
+
+/* End of projects section  */
+
+
+
+
+/* About me Section */
+.who-am-I{
+  flex-direction: column-reverse;/*image needs to be at the top*/
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+
+}
+.on-the-left{
+    width: 250px;
+    height:360px;
+}
+.on-the-right{
+    width: 100%;
+
+}
+.on-the-right p{
+    margin-bottom: 20px;
+}
+
+.on-the-right .call-to-action{
+    margin-bottom:50px;
+    padding: 10px 20px;
+}
+
+.my_img{
+    position: relative;
+    border: 10px solid white;
+    height: 100%;
+   
+}
+
+
+.my_img::after{
+    content: '';
+    position: absolute;
+    left: -33px;
+    height: 98%;
+    width: 98%;
+    top: 20px;
+    border: 8px solid rgba(253,105,163,255);
+    z-index: -1;/*takes it back*/
+
+
+
+}
+
+/* End of about me section */
+
+/*Start of my Education Section*/
+.my-education{
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+thead tr{
+    padding: 40px;
+    margin: 0 auto;
+}
+
+thead{    
+    background-color: rgba(218,218,218,255);
+    box-shadow: 0 5px 10px rgba(218,218,218,255);
+
+}
+th{
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+
+}
+table{
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px(218,218,218,255);
+    
+    
+}
+
+td{
+    padding: 40px;
+    margin: 0 auto;
+   
+}
+
+tr:nth-child(even) {
+    background-color: rgb(252,228,220);
+    box-shadow: 0 5px 10px rgba(218,218,218,255)
+
+  }
+
+/* End of my Education Section  */
+
+
+/* contact section  */
+
+.my-contacts{
+   flex-direction: column;
+   max-width: 1200px;
+   margin: 0 auto;
+   margin-top: 100px;
+   
+
+}
+.my_contacts_items{
+    width: 80%;
+    /* width:400px */
+    flex-direction:column;
+    align-items: center;
+    
+    
+}
+
+.contact_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    padding: 30px;
+    margin: 50px;  
+    
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(218,218,218,255);
+    transition: .4s ease box-shadow;
+
+}
+.contact_item:hover{
+    box-shadow: 0 10px 20px rgba(253,105,163,255);
+}
+.contact_icon{
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    
+}
+
+.contact_information h2{
+    font-weight: 600;
+
+}
+
+/* end of contact section  */
+
+/* Start of my footer */
+.my_name h2{
+    font-weight: 700;
+    font-size: 5rem;
+    color: white;
+}
+.my_footer{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url(./img/icon-background.webp); 
+    background-size: cover;
+    min-height: 200px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+
+}
+.social_item{    
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    filter: grayscale(1);
+    transition: .4s ease filter;
+}
+.social_item:hover{
+    filter: grayscale(0);
+}
+.my_social_media_icons{
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.my_name p{
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+.my_name h2{
+    color: white;
+    font-family: 'Redressed', cursive;
+    font-size: 5rem;
+}
+
+.my_name h2 span{
+    color: rgba(253,105,163,255);
+    font-size: 5rem;
+    text-align: center;
+}
+/* End of my footer */
+
+/* Media queries for responsiveness on tablet */
+@media only screen and (min-width: 768px) {
+/* for services */
+.what-I-do-item{
+    flex-basis: 45%;
+    margin: 2.5%;
+
+}
+
+/* for my projects */
+
+.project_item{
+    height: 400px;
+    margin: 0;
+    width: 80%;
+    flex-direction: row;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(218,218,218,255);
+    transition: .4s ease box-shadow;
+
+}
+.project_item:hover{
+    box-shadow: 0 10px 20px rgba(253,105,163,255);
+}
+.project_write_up{
+    height: 100%;
+
+}
+.project_image{
+    height: 100%;
+
+}
+
+/*Who I am section*/
+.who-am-I{
+    flex-direction: row;
+}
+.on-the-left{
+    width: 600px;
+    height: 400px;
+    padding-left: 60px;
+}
+.on-the-right{
+    text-align: left;
+    padding: 30px;
+}
+.on-the-right h1{
+    text-align: left;
+}
+}
+
+
+
+
+
+/* End - Media queries for responsiveness on tablet */
+
+/* Media for PC */
+@media only screen and (min-width:1200px){
+.my_contacts_items{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.contact_item{
+    margin: 0 10;
+    width: 90%;
+}
+
+
+/* What I do Section */
+.what-I-do-item{
+    flex-basis: 22%;
+    margin: 1.5%;
+    height: 500px;
+    width: 500px;
+
+}
+.what-I-do-item img{
+    width: auto;
+    height: auto;
+}
+/* .what-I-do-intro{
+    max-width: 500px;
+	margin: 0 auto;
+} */
+
+}
+/* End Media for PC */

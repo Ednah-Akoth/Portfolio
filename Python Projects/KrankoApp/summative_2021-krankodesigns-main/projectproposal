@@ -1,0 +1,9 @@
+Project proposal
+KrankoDesigns
+Our project proposal is to create an application/system that links users/customers with professionals that will provide various services.
+
+Our application/system would have Krankodesigns as the main class with an introductory message. Then we would have child classes developers, accountants, architects, and designers. Developers, accountants, architects, and designers will be the staff at Krankodesigns and would have other privileges that would form the methods in the class such as obtaining loans, taking a leave or terminating their contracts with krankodesigns this with various restrictions
+6
+The customer will be able to access methods such as hiring_developers, hiring accountants, buying software and performing tasks such as calculating their individual taxes, company taxes at affordable rates. The system would apply the various laws in place and give tax reliefs where applicable and thus generate the amount the user can remit to the taxman.
+
+The main program would enable a user to login into his or her account, or create an account and depending on whether it’s a staff member or client, perform tasks that he/she has access to, and perform various actions according to the system privileges.

@@ -1,0 +1,121 @@
+##Child class
+##This child class inherits from KrankoDesigns. This is to enable developers to also have the menu options that the customers have as they can also hire other professionals
+class Developers(KrankoDesigns):
+	Initialize the unique ID that will be assigned to the developer as Unique ID
+	Code = 600
+	##Create the object variables
+	def __init__(self, fName,lName,password,dob,phone_no,doj,acc,specialty,years_of_experience,rate,available,portfolio_link):
+		super().__init__(fName,lName,password,dob,phone_no,doj,acc)
+		self.unique_ID = Developer.code
+        		Developer.code = Developer.code+1
+        		self.specialty = specialty
+        		self.years_of_experience = years_of_experience
+        		self.rate = rate
+		self.available = available
+		self.portfolio_link = portfolio_link
+##Define methods for this class
+##These are the methods that a developer can do. Since the class Developer will be the base class for the remaining professionals(multilevel inheritance), the other professionals will also be able to access these methods
+	def take_a_loan(self):
+		If doj - today <90 days:
+			Reject loan request.
+			print(“You can only borrow after being a member of KrankoDesigns for 3months”)
+			Take them to main menu
+		elif  doj - today >= 90 days:
+			Ask user to enter amt
+			Exception handling of value error
+			##Developers can only borrow a maximum of $10000
+			If amount > 10000
+				print(“Request is out of range. Can only borrow $10000”)
+				Back to main menu
+			Elif amount > amount in KrankoDesigns account:
+				print(‘amount not available. Try the process again with a lower amount’)
+				Back to main menu
+				if self.unique_ID in customer_dict:
+					client_menu()
+				elif  self.unique_ID in prof_dict:
+					prof_menu()
+
+
+			else:
+Add said amount to self.acc
+deduct amount from KrankoDesigns account:
+print(f‘operation successful. You have borrowed {amt}’)
+Take user to main menu
+if self.unique_ID in customer_dict:
+					client_menu()
+				elif  self.unique_ID in prof_dict:
+					prof_menu()
+
+
+
+
+	def take_leave(self):
+		Tell the user that taking a leave means they will not be getting clients.
+		Ask if they consent.
+		While True:
+			If consent = yes:
+				If self.available == no:
+					Print (already on leave)
+					Take user to main menu
+				elif self.available == yes:
+					Change developer’s available variable to no
+					print(enjoy your leave)
+			elif consent = no:
+				Take them to menu
+			else:
+				Tell user to enter a valid response
+	def resume_from_leave:
+		input(“Are you sure? Yes or No?”)
+		If users response is Yes:
+			If  self.available = yes:
+				print(“you are already working’)
+				Take them to main menu
+			Elif self.available == no:
+Change the availability to yes
+print(“Welcome back!”)
+Take them to main menu
+
+
+	def terminate_contract(self):
+		Tell user that terminating contract will result in the permanent deletion of their account.
+		Ask if they would like to proceed with the termination.
+		While True:
+			If consent = yes:
+				Delete developers object from the dictionary.
+				Take them to the log in page
+			elif consent = no:
+				Take them to menu
+			else:
+				Tell user to enter a valid response
+
+Test Scenarios for this class
+Import unittest
+-->def Test_hiring_accountant
+This would test whether the hiring_accountant method is working correctly
+This would be implemented by creating sample objects and test using them.
+ Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the accountant’s account. We could also check whether the filter of only displaying accountants with a ‘yes’ availability works correctly. The 80% - 20% split will also have to be tested to see if the correct amount are being added to the respective accounts.
+
+→ def Test_hiring_architect
+This would test whether the hiring_architect method is working correctly
+This would be implemented by creating sample objects and test using them.
+Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the architect’s account. We could also check whether the filter of only displaying architects with a ‘yes’ availability works correctly. The 80% - 20% split will also have to be tested to see if the correct amount are being added to the respective accounts.
+-->def Test_buying_software
+This would test whether the buying_software method is working correctly
+This would be implemented by creating sample objects and test using them.
+Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the company’s account. We could also check whether a customer can purchase when there is no stock, and if they can purchase when they don’t have enough funds
+
+-->def Test_calc_tax
+This would test whether the calc_tax method is working correctly
+This would be implemented by creating sample objects and test using them.
+Some of the scenarios to be tested include calculating both corporate and individual tax and trying a variety of income values in each range
+
+
+-->Def  Test_take a loan()
+This would test the take_a loan method, by first creating a sample object then checking if Krankodesigns has any money to lend, and if yes,then check if the amount borrowed is less than what Krankodesigns has and if the conditions are met,the developer is granted a loan. This involves checking whether borrowing beyond the limit will be allowed., if the money will be credited to the user’s account and debited from KrankoDesigns account
+
+
+→ Def Test_take_ a leave
+This would test the take_a_leave method, by temporarily scraping off the developer’s name off the operating dictionary until the developer comes back. A sample object would be used to test it.
+
+-->Def Test_terminate_contract
+This would test the terminate contract method, by permanently scraping off the developers name in the operating dictionary. A sample object would be used to test this.

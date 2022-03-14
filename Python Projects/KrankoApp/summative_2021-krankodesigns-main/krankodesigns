@@ -1,0 +1,185 @@
+Design of classes
+
+##The parent class
+#This is the parent class that provides the blueprint of the customers. It also serves as the main class
+Class KrankoDesigns:
+	KrankoDesigns_account = $10,000,000
+	Initialize the unique ID that will be assigned to the user  as Unique ID
+	code=400
+	##Create the object variables
+	def __init__(self, fName,lName,password,dob,phone_no,doj,acc):
+		self.unique_ID = KrankoDesigns.code
+        		KrankoDesigns.code = KrankoDesigns.code+1
+        		self.fName = fName
+        		self.lName = lName
+        		self.password = password
+       		 self.dob = dob
+        		self.phone_no = phone_no
+        		self.doj = doj
+self.acc = acc
+
+	##Define the class methods
+              #This first method describes the process of hiring a developer.
+	def hiring_developer(self):
+		#Loop through dictionary of developers and take those with availability as ‘yes’
+		for object in dev_dict:
+			if dev_dict[item].available == yes:
+				print that developer
+		Display a list of these developers together with details eg rates, speciality etc
+		Ask user to enter the unique ID of the developer they want.
+		Ask user to accept transaction
+		If users_response is yes:
+			Self.acc minus the hiring amount
+			add 80% of the amount to the acc of person being hired
+Add 20% of the amount to KrankoDesigns account
+		Give user the phone number of accountant
+		Ask the user if they want to exit or go back to the menu.
+		while True:
+			If response == menu:
+				if self.unique_ID in customer_dict:
+					client_menu()
+				if  self.unique_ID in prof_dict:
+					prof_menu()
+			elif response == exit:
+				exit()
+			else: print(“type in a valid response”)
+			#The above code will be repeated whenever we want user to go back to menu. It will be made a function
+
+	def hiring_accountant(self):
+		for object in accountants_dict
+			if accountants_dict[item].available == yes:
+				print that accountant
+		Display a list of these accountants together with details eg rates, speciality etc
+		Ask user to enter the unique ID of the accountant they want.
+		Ask user to accept transaction
+		If users_response is yes:
+			self.acc minus the hiring amount
+			add 80% of the amount to the acc of person being hired
+Add 20% of the amount to KrankoDesigns account
+		Give the user the phone number of the accountant
+		Ask the user if they want to exit or go back to the menu.
+		while True:
+			If response == menu:
+				if self.unique_ID in customer_dict:
+					client_menu()
+				if  self.unique_ID in prof_dict:
+					prof_menu()
+			elif response == exit:
+				exit()
+			else: print(“type in a valid response”)
+
+	def hiring_architect(self):
+		#process same as above
+	def hiring_designer(self):
+		#process same as above
+	def buying_software(self):
+		Print (software)#The dictionary with all software
+		User enters the ID of the software they would like to purchase
+		Enters the quantity of that item.
+			if there is enough in stock:
+Calculate amount to be paid:
+Show user amount and ask to confirm by yes or no
+If response == no:
+print (transaction terminated)
+Back to main menu
+elif response ==  yes:
+		if amount to be paid > than amt in self.acc:
+			Tell user to top up funds
+			Back to main menu
+		elif amount to be paid =< self.acc:
+			Deduct amount from self.acc
+			Add to KrankoDesigns account
+			print( checkout successful. Come to our office to pick it up)
+			Back to main menu
+			elif there isn’t enough in stock:
+				tell user there’s only {the number available} in stock.
+				Ask if they would like to check out that number of items
+
+				if response == yes:
+Calculate total cost
+If total cost > self.acc
+Tell user to top up funds
+Back to main menu
+elif total cost<= self.account:
+Deduct amount from self.acc
+Add to KrankoDesigns account
+print( checkout successful. Come to our office to pick it up)
+	Back to main menu
+				If response == no
+					print(check out terminated)
+					Back to main menu
+
+	def calc_tax(self):
+                  ask user what type of tax they want to calculate(Individual or company tax)
+      If its company tax and the area of jurisdiction is kenya, prompt the user to key the
+Total  income  and then multiply by 30%.
+   If it individual tax, prompt the user to enter the basic salary, the sum total of all benefits, PAYE paid in a month, then use the graduated scale rate of tax
+
+Taxable Income
+Tax Rate
+shSh.0 - KSh.12,298
+10%
+KES 12,999 - KES 23,885
+15%
+KES 23,886 - KES 35,472
+20%
+KES 35,473 - KES 47,059
+25%
+
+Excess 47059                                                                  30%
+If statements would be used for various income inputs and then less the relief of ksh 1204 per month
+
+
+	Def account_top_up(self):
+		Ask user how much they would like to add to the account:
+		Exception handling (ValueError)to ensure only integers are entered
+		Add this amount to unique.ID.acc
+		Tell user how much they have using print(self.acc)
+		Back to main menu
+		while True:
+			if self.unique_ID in customer_dict:
+				client_menu()
+			if  self.unique_ID in prof_dict:
+				prof_menu()
+
+	Def account_withdraw(self):
+		Ask user how much they want to withdraw
+		Exception handling (ValueError)to ensure only integers are entered
+		If amount > self.acc:
+			print(“requested amt greater than current balance. You have {self.acc}”)
+			Back to main menu
+		elif amount <= self.acc:
+			Subtract it from self.acc
+			print(operation successful. You balance is now {self.balance}
+			Back to main menu
+			if self.unique_ID in customer_dict:
+				client_menu()
+			if  self.unique_ID in prof_dict:
+				prof_menu()
+
+
+
+Test cases for this class
+Import the unittest module
+Class Test_krankodesigns(unittest)
+-->def Test_hiring_developer()
+This would test whether the hiring_developer method is working properly,
+ We would first create sample objects. Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the developer’s account. We could also check whether the filter of only displaying developers with a ‘yes’ availability works correctly. The 80% - 20% split will also have to be tested to see if the correct amount are being added to the respective accounts.
+-->def Test_hiring_accountant
+This would test whether the hiring_accountant method is working correctly
+This would be implemented by creating sample objects and test using them.
+ Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the accountant’s account. We could also check whether the filter of only displaying accountants with a ‘yes’ availability works correctly. The 80% - 20% split will also have to be tested to see if the correct amount are being added to the respective accounts.
+
+→ def Test_hiring_architect
+This would test whether the hiring_architect method is working correctly
+This would be implemented by creating sample objects and test using them.
+Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the architect’s account. We could also check whether the filter of only displaying architects with a ‘yes’ availability works correctly. The 80% - 20% split will also have to be tested to see if the correct amount are being added to the respective accounts.
+-->def Test_buying_software
+This would test whether the buying_software method is working correctly
+This would be implemented by creating sample objects and test using them.
+Some of the scenarios to be tested include checking whether money is being deducted from users’ account and being added to the company’s account. We could also check whether a customer can purchase when there is no stock, and if they can purchase when they don’t have enough funds
+
+-->def Test_calc_tax
+This would test whether the calc_tax method is working correctly
+This would be implemented by creating sample objects and test using them.
+Some of the scenarios to be tested include calculating both corporate and individual tax and trying a variety of income values in each range

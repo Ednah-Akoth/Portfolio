@@ -1,0 +1,77 @@
+NOTE: Due to difficulty printing out the dataframes on my pycharm, this assignment was done on jupyter notebooks
+
+The first thing I need to do is take a look at the website that I need to scrape.
+Here, I am looking out for how the information is structured and also peruse through to
+find the data that will help me achieve my objective of printing a list of the most expensive books among the popular books.
+Also, since this is a webpage, I know of two ways of accessing data on a webpage. One is adding a
+web scraper extension to my browser and letting it crawl through the page and present
+what it finds in the form of a CSV file. In addition to this being outside of what is
+being asked of me in this assignment, often, this method tends to present some inaccurate
+and inconsistent data and would need manual rectification of the data in the CSV. The second way
+is through using python which is what I will be doing for this assignment.
+
+For me to scrap using python, I will need an external library to interact with the structure of the
+webpage which is written in HTML. An overall picture of what I would do is:
+
+            1. Connect to the amazon website
+            2. Figure out a way of getting access to the relevant data I need to give back the required
+               list of books
+            3. Extract this information from the website
+            4. Ensure that in the process of extracting, empty cells are handled.
+            5. Store the content in a format that will enable me to sort/manipulate with ease
+            6. Sort the number of reviews to give me a list of books with many reviews (I will take the top 30)
+            7. Out of these, sort them to give me the most expensive ones.
+
+For number 1 and 2:
+- To enable connection to the website, I will import and use Python requests, which is a  Python HTTP library
+that provides methods for accessing  Web resources via HTTP
+- From requests, I will use the get method, which issues a GET request that Fetches documents identified by the given
+URL. Using the line of code print(requested.content), I am able to see the HTML of the page
+- In the get requests method, I will pass a user_agent header as an argument. The user_agent lets servers and network peers
+identify the application,operating system, vendor, and/or version of the request, thus helping in bypassing the detection as a scraper
+- I will then extract the content from requests.get method (which is stored in a variable called requested) and store it in a variable called
+ content as follows: content = requested.content
+- Thereafter, I will assign this content that is in HTML to a soup variable.
+- At this point another library called BeautifulSoup comes into play. Since webpages are made using HTML, for me to fetch the content of these
+pages, I will need to access elements by their HTML tags.The library Beautiful Soup, which is meant to help in extracting Structured Data from HTML
+will interact with HTML and get me the information I need.
+
+
+For Number 3, and 4:
+-Firstly, I need to inspect the webpage and Identify the parent tag within which lies all the data about a book that I want to extract
+This is done by right clicking and choosing the inspect option. I can then use the selector which allows me
+to browse through the webpage using my cursor, selecting the specific item I want and checking the corresponding html content
+highlighted
+-From the webpage, I need: i) The name of the book
+                           ii) Author of the book
+                           iii)Book rating
+                           iv) Number of ratings/reviews
+                           v) Price of the book
+- Looking at the page, these items all fall under the parent "div" tag, and class = a-section a-spacing-none aok-relative.
+I will therefore loop through all of the parent tags identified above, collecting the name, author, book rating, no of ratings and
+the price of the book using a for loop.
+- To collect the said attributes, I will need to identity the tags and classes the attributes fall under, which has been done as is evident in the code.
+-I will store all information pertaining to a book in a list (list_for_individual_book). Thus, I will, one by one, append the attributes,
+giving alternate text to be appended when any of the info wasn't retrieved from the website. If statements will be used to do this
+-Thereafter, that individual list for the book will be appended to a main list that will host all the books (Book_list)
+
+
+For Number 5:
+Now I have a nested list which has list of each of the books, I will then use a Dataframe to manipulate the data. Thus, the library pandas has been imported
+to this effect.
+The pandas library offers data structures and operations for manipulating numerical tables.
+After importing pandas, the list(Book_list) is loaded into a dataframe and the columns labeled. The dataframe is then uploaded to a
+csv file and the csv file read to enable manipulation of the data
+
+Since I will be using the no_of_ratings and price columns, I need to make sure they are suitable for manipulation. Thus, in the
+no_of_ratings column, I will remove the commas and convert the values to numerals and for the price column, I will remove the $ sign and change
+it to a float.
+
+For Number 6 and 7:
+I will then sort the no_of_ratings column and take the top 30 books with the highest ratings.
+Then, out of the top 30 books with the most reviews, I will sort in descending order of price and get the
+most expensive ones out of these.
+This is what has been done and the result is visible in the jupyter notebook file
+
+
+
