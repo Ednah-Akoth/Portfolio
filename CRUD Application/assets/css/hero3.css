@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Montserrat";
+  text-align: left;
+}
+.header {
+  top: 0;
+  display: grid;
+  overflow: hidden;
+  background-color: #602270;
+}
+
+.nav {
+  display: flex;
+  height: fit-content;
+  padding: 1rem 8% 1rem 8%;
+}
+.nav .navbar-brand {
+  width: 30%;
+  display: flex;
+}
+.nav .navbar-links {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  width: 12rem;
+  height: 5rem;
+  z-index: 1;
+  top: 50%;
+  left: 20%;
+}
+* {
+  box-sizing: border-box;
+}
+
+.rectangle {
+  width: 300px;
+  height: 350px;
+  background-color: #602270;
+  /* position: relative;
+  left: 200px;
+  top: 100px; */
+  border-radius: 10%;
+  float: left;
+}
+
+.container {
+  position: relative;
+  /*! resize: vertical; */
+  /*! left: 250px; */
+  padding: 0;
+  overflow: auto;
+  /*! top: 100px; */
+  margin: 4rem;
+  margin-left: 14rem;
+  margin-right: 14rem;
+}
+.content {
+  float: right;
+}
+.text {
+  color: #e07b23;
+  padding: 6px;
+}
+
+.paragraph {
+  padding: 6px;
+  padding-right: 10px;
+  margin-block-end: 100px;
+  width: 480px;
+  text-align: justify;
+}
+.footer {
+  bottom: 0;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #602270;
+  color: white;
+  text-align: center;
+}
+
+.footer p {
+  text-align: center;
+}
